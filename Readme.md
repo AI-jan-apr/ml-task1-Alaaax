@@ -1,31 +1,41 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/3TS0mELD)
+
 # Machine Learning Task 1
+
 ## Breast Cancer — Binary Classification
 
----
+Binary classification task using the **Breast Cancer Wisconsin Dataset** from scikit-learn.
+
 
 ## Objective
 
-In this task, you will build and compare multiple **binary classification** models to predict whether a tumor is:
+In this task, we build and compare 3 **binary classification** models to predict whether a tumor is:
 
 - **0 — Malignant (Cancerous)**
 - **1 — Benign (Non-cancerous)**
 
-You must use the following models covered in class:
+The binary classification models:
 
 - Logistic Regression
 - Support Vector Machine (SVM)
 - K-Nearest Neighbors (KNN)
 
-The focus of this task is **model training, evaluation, and comparison**.
+We focus on this task at **model training, evaluation, and comparison**.
 
-⚠️ Feature scaling is NOT allowed in this task.
+⚠️ Feature scaling NOT used in this task.
 
 ---
 
 ## Dataset
 
-We will use the **Breast Cancer Wisconsin Dataset**, available directly in `scikit-learn`.
+We used the **Breast Cancer Wisconsin Dataset**, that available directly in `scikit-learn`
+
+| Property       | Value                     |
+|----------------|---------------------------|
+| Samples        | 569                       |
+| Features       | 30 numerical              |
+| Target         | Binary (0 = Malignant, 1 = Benign) |
+| Missing Values | None                      |
 
 ### Dataset Overview
 
@@ -52,7 +62,7 @@ y = data.target
 
 ---
 
-## Required Tasks
+## The Main Tasks:
 
 ### 1. Train-Test Split
 
@@ -70,7 +80,7 @@ Train the following models:
 - SVM
 - KNN
 
-Use default parameters unless clearly justified.
+Used default parameters unless clearly justified.
 
 ### 3. Model Evaluation
 
@@ -103,10 +113,27 @@ breast-cancer-binary-classification/
 └── README.md
 ```
 
----
+## Results Summary
 
-## Submission Requirements
+| Model               | Accuracy | Precision | Recall | F1-Score |
+|---------------------|----------|-----------|--------|----------|
+| Logistic Regression | 0.9561   | 0.9466    | 0.9861 | 0.9659   |
+| SVM                 | 0.9298   | 0.9210    | 0.9722 | 0.9459   |
+| KNN                 | 0.9122   | 0.9428    | 0.9166 | 0.9295   |
 
-- Clean and organized notebook
-- Clear metric comparison
-- Written conclusion
+
+## Conclusion
+
+**Logistic Regression** is the best-performing model across all metrics.
+
+In a medical context, **Recall** is the most important metric because missing a malignant tumor (false negative) carries far greater risk than a false alarm. Logistic Regression achieves the highest recall at **98.61%**.
+
+## Requirements
+
+```
+scikit-learn
+numpy
+pandas
+matplotlib
+seaborn
+```
